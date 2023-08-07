@@ -10,7 +10,7 @@ const Sensors = () => {
   const [isPending, setIsPending] = useState(true)
 
   useEffect(() => {
-    fetch('http://172.24.59.12:8232/sensors/get/')
+    fetch('http://193.166.139.12:8000/sensors/get/?skip=0&limit=100')
     .then(response => response.json())
     .then(json => {
       setSensors(json)

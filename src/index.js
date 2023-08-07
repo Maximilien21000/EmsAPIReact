@@ -14,19 +14,24 @@ import Devices from './pages/Devices';
 import Newdevice from './pages/Newdevice';
 import About from './pages/About';
 import Sensors from './pages/Sensors'
+import Login from './pages/Login';
+import { AuthProvider } from './context/AutProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter> 
+    <AuthProvider>
     <Routes>
-    <Route path='/' element={<App />}></Route>
+    <Route path='/*' element={<App />}></Route>
     <Route path='devices' element={<Devices />}></Route>
     <Route path='device/new' element={<Newdevice />}></Route>
     <Route path='devices/:id' element={<Device />}></Route>
     <Route path="about" element={<About />} />
     <Route path='sensors' element={<Sensors/>} />
+    <Route path='login' element={<Login/>} />
     </Routes>
+    </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 

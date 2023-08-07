@@ -10,7 +10,7 @@ const Devices = () => {
   const [isPending, setIsPending] = useState(true)
 
   useEffect(() => {
-    fetch('http://172.24.59.12:8232/devices/get/')
+    fetch('http://193.166.139.12:8000/devices/get/')
     .then(response => response.json())
     .then(json => {
       setDevices(json)

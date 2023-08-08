@@ -15,7 +15,8 @@ import Newdevice from './pages/Newdevice';
 import About from './pages/About';
 import Sensors from './pages/Sensors'
 import Login from './pages/Login';
-import { AuthProvider } from './context/AutProvider';
+import Register from './pages/Register';
+import { AuthProvider } from './context/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
     <Route path="about" element={<About />} />
     <Route path='sensors' element={<Sensors/>} />
     <Route path='login' element={<Login/>} />
+    <Route path='register' element={<Register/>} />
     </Routes>
     </AuthProvider>
     </BrowserRouter>

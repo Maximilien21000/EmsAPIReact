@@ -20,7 +20,6 @@ const Devices = () => {
   
   return (
     <Layout>
-      <h2>List of Devices</h2>
       {isPending}
           <div className='grid gid-cols-2 gap-3 lg:grid-cols-4'>
             {devices.map((item) => {

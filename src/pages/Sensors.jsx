@@ -20,7 +20,6 @@ const Sensors = () => {
   
   return (
     <Layout>
-      <h2>List of Sensors</h2>
       {isPending}
           <div className='grid gid-cols-2 gap-3 lg:grid-cols-4'>
             {sensors.map((item) => {

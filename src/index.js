@@ -27,7 +27,7 @@ root.render(
     <Route path='/*' element={<App />}></Route>
     <Route path='devices' element={<Devices />}></Route>
     <Route path='device/new' element={<Newdevice />}></Route>
-    <Route path='devices/:id' element={<Device />}></Route>
+    <Route path='devices/:name' element={<Device />}></Route>
     <Route path="about" element={<About />} />
     <Route path='sensors' element={<Sensors/>} />
     <Route path='login' element={<Login/>} />

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../components/Layout'
-
+import DeviceCard from '../components/DeviceCard'
 
 
 let BASE_URL = "http://193.166.139.12:8000/devices/get_details/?List_device="
@@ -51,16 +51,16 @@ useEffect(() => {getDevice(name)},[])
         </ul>}
 
         {device && <div>
-          <div className='flex flex-col justify-between min-h-full items-center'>
-            {device.name} {building}
-          </div>
-          
           <div className='flex flex-col items-center font-normal text-lg'>
-            <div>ID: {device.id}</div>
-            <div>Type: <span className='font-semibold text-orange-600 text-xl'>{device.type}</span></div>
-            <div>Long: {device.longitude}</div>
-            <div>Lat: {device.latitude}</div>
-            <div>P_Nam: {device.P_nam}</div>
+            
+            {device.map((el) => {
+              return (
+                <DeviceCard key={el.id} device = {el} />
+            )
+            })}
+            
+            
+            
           </div>
 
 

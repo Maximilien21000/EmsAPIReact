@@ -14,6 +14,7 @@ import Devices from './pages/Devices';
 import Newdevice from './pages/Newdevice';
 import About from './pages/About';
 import Sensors from './pages/Sensors'
+import Sensor from './pages/Sensor';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { AuthProvider } from './context/AuthProvider';
@@ -30,6 +31,7 @@ root.render(
     <Route path='devices/:name' element={<Device />}></Route>
     <Route path="about" element={<About />} />
     <Route path='sensors' element={<Sensors/>} />
+    <Route path='sensors/:name/:sensor' element={<><Sensor/></>} />
     <Route path='login' element={<Login/>} />
     <Route path='register' element={<Register/>} />
     </Routes>

@@ -49,7 +49,7 @@ const Sensor = () => {
           
           <div className='flex flex-col items-center font-normal text-lg'>
           <div className="font-sembold text-red-600 txt-xl">{name}</div>  
-          <div>ID: <span className="font-semibold text-orange-600 text-xl">{Sensor.id}</span></div>
+          
           <div>Unit: {Sensor.unit}</div>
           <div>Device ID: {Sensor.device_id}</div>
           <div>Sensor Name: {Sensor.sensor_name}</div>

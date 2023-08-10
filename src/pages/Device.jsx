@@ -17,6 +17,7 @@ const Device = () => {
 
   const getDevice = async() => {
     const res = await fetch(`${BASE_URL}${name}`)
+    console.log(res)
     
     if (!res.ok){
       setError([res.url, res.status])

@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+
+  emsfrontend:
+    container_name: emsfrontend
+    image: nicknav98/emsfeprod:prod
+    ports:
+      - '1337:80'

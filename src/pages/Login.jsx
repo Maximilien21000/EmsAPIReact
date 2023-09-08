@@ -23,7 +23,7 @@ const Login = () => {
  
 
   const getUserData = async (token) => {
-    const response = await fetch("http://193.166.139.12:8000/users/me", {
+    const response = await fetch(`${process.env.REACT_APP_API}/users/me`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const Login = () => {
   };
   
   const onFormSubmit = async (newData) => {
-  let url = 'http://193.166.139.12:8000/users/token'
+  let url = `${process.env.REACT_APP_API}/users/token`
   const params = new URLSearchParams(newData);
 
   //const options = { method: 'POST', headers: {'content-type':'application/x-www-form-urlencoded'}, data: qs.stringify(newData),url,};

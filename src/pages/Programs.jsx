@@ -1,37 +1,37 @@
 import React from 'react'
-import Card from '../components/Card'
+import ProgramCard from '../components/ProgramCard.jsx'
 import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 
 
-const Devices = () => {
-  const [devices, setDevices] = useState([])
-  const [deviceName, setName] = useState('')
+let BASE_URL= `${process.env.REACT_APP_API}/programs/get/`
+
+const Programs = () => {
+  const [programs, setPrograms] = useState([])
+  const [programName, setName] = useState('')
   const [isPending, setIsPending] = useState(true)
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/devices/get/`)
+    fetch(BASE_URL)
     .then(response => response.json())
     .then(json => {
-      setDevices(json)
+      setPrograms(json)
       setIsPending(false)
     })
-    }, [deviceName])
-  
+    }, [programName])
   return (
     <Layout>
-      {isPending}
+        {isPending}
           <div className='grid gid-cols-2 gap-3 lg:grid-cols-4'>
-            {devices.map((item) => {
+            {programs.map((item) => {
                 return (
-                <Card key={item.id} device = {item}/>
+                <ProgramCard key={item.program_name} program = {item}/>
                 )
             })}
-              
           </div>
       
     </Layout>
   )
 }
 
-export default Devices;
+export default Programs;

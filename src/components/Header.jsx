@@ -34,6 +34,10 @@ const Header = () => {
             } to="/sensors"> Sensors </NavLink>
             
             <NavLink className={({ isActive }) =>
+              isActive ? "active-link" : "p-4"
+            } to="/programs"> Programs </NavLink>
+
+            <NavLink className={({ isActive }) =>
               isActive ? "active-link" : "p-4"} to='/login'> Login </NavLink>
 
             <NavLink className={({ isActive }) => isActive ? "active-link" : "p=4"} to='/register'> Register </NavLink>

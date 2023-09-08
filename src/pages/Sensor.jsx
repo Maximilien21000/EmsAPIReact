@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
-let BASE_URL = 'http://193.166.139.12:8000/sensors/get_sensor/'
+let BASE_URL = `${process.env.REACT_APP_API}/sensors/get_sensor/`
 
 const Sensor = () => {
     const { name } = useParams()
@@ -54,7 +54,7 @@ const Sensor = () => {
           <div>Device ID: {Sensor.device_id}</div>
           <div>Sensor Name: {Sensor.sensor_name}</div>
           <div>User ID: {Sensor.user_id}</div>
-          <div>Is Private: {Sensor.private ? 'Yes': 'No'}</div>
+          <div>Is Private: {Sensor.private ? "Yes":"No"}</div>
           </div>
 
 

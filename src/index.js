@@ -15,8 +15,10 @@ import Newdevice from './pages/Newdevice';
 import About from './pages/About';
 import Sensors from './pages/Sensors'
 import Sensor from './pages/Sensor';
+import Programs from './pages/Programs'
 import Login from './pages/Login';
 import Register from './pages/Register';
+import DevicesSensors from './pages/Device_Sensor';
 import { AuthProvider } from './context/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -34,6 +36,9 @@ root.render(
     <Route path='sensors/:name/:sensor' element={<><Sensor/></>} />
     <Route path='login' element={<Login/>} />
     <Route path='register' element={<Register/>} />
+    <Route path="programs" element={<Programs/>}></Route>
+    <Route path="devices/:devicename/sensors" element={<DevicesSensors/>}></Route>
+
     </Routes>
     </AuthProvider>
     </BrowserRouter>

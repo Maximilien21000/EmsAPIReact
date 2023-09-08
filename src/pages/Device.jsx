@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import DeviceCard from '../components/DeviceCard'
 
 
-let BASE_URL = "http://193.166.139.12:8000/devices/get_details/?List_device="
+let BASE_URL = `${process.env.REACT_APP_API}/devices/get_details/?List_device=`
 
 const Device = () => {
   const { name } = useParams();
@@ -56,7 +56,7 @@ useEffect(() => {getDevice(name)},[])
             
             {device.map((el) => {
               return (
-                <DeviceCard key={el.id} device = {el} />
+                <DeviceCard key={el.id} device = {el} /> 
             )
             })}
             

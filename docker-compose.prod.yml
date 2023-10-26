@@ -4,6 +4,10 @@ services:
 
   emsfrontend:
     container_name: emsfrontend
-    image: nicknav98/emsfeprod:prod
+    image: maximilienm/apifrontendlocal
     ports:
       - '1337:80'
+    env_file:
+      - ".env"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

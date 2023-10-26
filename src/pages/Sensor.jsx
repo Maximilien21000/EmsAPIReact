@@ -1,8 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { useParams, Link } from "react-router-dom";
 
 let BASE_URL = `${process.env.REACT_APP_API}/sensors/get_sensor/`
 
@@ -55,11 +54,13 @@ const Sensor = () => {
           <div>Sensor Name: {Sensor.sensor_name}</div>
           <div>User ID: {Sensor.user_id}</div>
           <div>Is Private: {Sensor.private ? "Yes":"No"}</div>
+          <Link to={`/measurements/${name}/${Sensor.sensor_name}`}> See Measurements </Link>
           </div>
 
 
-
+          
           </div>}
+          
         </Layout>
     )
 }

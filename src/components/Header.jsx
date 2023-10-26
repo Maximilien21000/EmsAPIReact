@@ -16,7 +16,7 @@ const Header = () => {
     <div className="flex-1">
         <Link className="btn btn-ghost normal-case text-xl" to="/">Energy Management System - NERC</Link>
         <span className="border-2 border-amber-500 p-1">
-            {auth?.username?`Logged in as ${auth?.username} - ${auth.is_admin? 'false': 'Non Admin Account'}`:"Not logged in"}
+            {auth?.username?`Logged in as ${auth?.username} - ${auth.is_admin? 'Admin Account': 'Non Admin Account'}`:"Not logged in"}
         </span>
     </div>
        <div className="pr-8 font-semibold">
@@ -36,6 +36,10 @@ const Header = () => {
             <NavLink className={({ isActive }) =>
               isActive ? "active-link" : "p-4"
             } to="/programs"> Programs </NavLink>
+
+            <NavLink className={({ isActive }) =>
+              isActive ? "active-link": "p-4"
+            } to="/plots"> Extract CSV </NavLink>
 
             <NavLink className={({ isActive }) =>
               isActive ? "active-link" : "p-4"} to='/login'> Login </NavLink>

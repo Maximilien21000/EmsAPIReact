@@ -27,8 +27,8 @@ const Sensors = () => {
                 <SensorCard key={item.name} sensor = {item}/>
                 )
             })}
-              
           </div>
+          
       
     </Layout>
   )
